@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import informations from './info.js'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [content, setContent] = useState("")
 
   return (
     <>
@@ -15,6 +15,24 @@ function App() {
       </div>
 
       <div className='side-bar'>
+        <button onClick={() => setContent(informations[0])}>
+          👉 About Me 👈
+        </button>
+
+        {
+          content && (
+            <div className='content-box'>
+              <h2>{content.name}</h2>
+              <p>{content.information}</p>
+              <button onClick={() => setContent(null)}>Fechar</button>
+            </div>
+          )
+        }
+
+
+
+
+
         <h2>
           Gonçalo Dias Rodrigues
         </h2> 
