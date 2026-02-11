@@ -31,6 +31,7 @@
   flex-direction: column; /* Organiza itens em coluna na sidebar */
   justify-content: center;
   align-items: center;
+  gap: 20px;
   z-index: 1000;
 }
 
@@ -42,12 +43,44 @@
   height: calc(100vh - 122.8px);
   background-color: rgba(226, 168, 43, 0.75);
   border: 2.5px solid blue;
+  overflow-y: auto; /* Ativa o scroll apenas vertical */
+  overflow-x: hidden; /* Garante que o conteúdo não "fuja" para os lados */
   border-radius: 10px;
   justify-content: left;
   align-items: center;
   z-index: 1000;
 }
 
+.content-box-image{
+  max-width: 100%; /* Não deixa a imagem sair da caixa */
+  height: 60vh;    /* Mantém a proporção original */
+  display: block;
+  border-radius: 10px;
+  border: 2.5px solid blue;
+  margin: 10px auto; /* Centraliza */
+}
 
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  gap: 20px;
+  padding-left: 15px; /* Faz parecer uma sub-lista */
+  width: 100%;
+}
 
+.fixed-button{
+  position: inherit;
+  top: 100px;
+}
+
+.outlined-text {
+  /* 1. Define the outline: width and color */
+  -webkit-text-stroke: 1.5px black;
+  /* 2. Optional: Set the main color of the text (often 'transparent' or a light color) */
+  color: white;
+  /* 3. Optional: Make it bold for better visibility */
+  font-weight: bold;
+  font-size: 40px;
+}
 
