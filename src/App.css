@@ -11,8 +11,8 @@
   left: 0;
   right: 0;
   height: 80px; 
-  background-color: rgba(171, 43, 226, 0.75);
-  border: 2.5px solid blue; /* Forma curta de escrever border-style/color/width */
+  background-color: rgba(52, 39, 64, 0.95);
+  border: 2.5px solid rgb(255, 255, 255); /* Forma curta de escrever border-style/color/width */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,8 +25,8 @@
   left: 0;
   width: 200px; /* Em vez de 'right', define uma largura fixa */
   height: calc(100vh - 90px); /* Usa calc para ocupar o resto da altura do ecrã subtraindo o topo */
-  background-color: rgba(43, 226, 86, 0.75);
-  border: 2.5px solid blue;
+  background-color: rgba(52, 39, 64, 0.95);
+  border: 2.5px solid rgb(255, 255, 255);
   display: flex;
   flex-direction: column; /* Organiza itens em coluna na sidebar */
   justify-content: center;
@@ -41,14 +41,31 @@
   left: 225px;
   width: 1290px;
   height: calc(100vh - 122.8px);
-  background-color: rgba(226, 168, 43, 0.75);
-  border: 2.5px solid blue;
+  background-color: rgba(52, 39, 64, 0.95);
+  border: 2.5px solid rgb(255, 255, 255);
   overflow-y: auto; /* Ativa o scroll apenas vertical */
   overflow-x: hidden; /* Garante que o conteúdo não "fuja" para os lados */
   border-radius: 10px;
-  justify-content: left;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  box-sizing: border-box;
+  padding: 20px;
   z-index: 1000;
+  animation: expandFromCenter 0.4s ease-out forwards;
+  /* Garante que a animação comece do centro da própria caixa */
+  transform-origin: center;
+}
+
+@keyframes expandFromCenter {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .content-box-image{
@@ -56,7 +73,7 @@
   height: 60vh;    /* Mantém a proporção original */
   display: block;
   border-radius: 10px;
-  border: 2.5px solid blue;
+  border: 2.5px solid rgb(255, 255, 255);
   margin: 10px auto; /* Centraliza */
 }
 
@@ -67,6 +84,9 @@
   gap: 20px;
   padding-left: 15px; /* Faz parecer uma sub-lista */
   width: 100%;
+  animation: expandFromCenter 0.4s ease-out forwards;
+  /* Garante que a animação comece do centro da própria caixa */
+  transform-origin: center;
 }
 
 .fixed-button{
@@ -74,13 +94,20 @@
   top: 100px;
 }
 
-.outlined-text {
+.outlined-title-text{
   /* 1. Define the outline: width and color */
   -webkit-text-stroke: 1.5px black;
   /* 2. Optional: Set the main color of the text (often 'transparent' or a light color) */
   color: white;
   /* 3. Optional: Make it bold for better visibility */
   font-weight: bold;
-  font-size: 40px;
+  font-size: 30px;
+}
+
+.outlined-normal-text{
+  -webkit-text-stroke: 0.8px black;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
 }
 
