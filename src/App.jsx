@@ -10,18 +10,18 @@ function App() {
   return (
     <>
       <div className='top-bar'>
-        <h2 className='outlined-text'>
+        <h2 className='outlined-title-text'>
           Gonçalo Dias Rodrigues
         </h2> 
       </div>
 
       <div className='side-bar'>
         <button className='fixed-button' onClick={() => setContent(informations[0])}>
-          👉 About Me 👈
+          ᐳ About Me ᐸ
         </button>
 
         <button className= 'fixed-button' style={{top: '160px'}}    onClick={() => setShowProjects(!showProjects)}>
-          {showProjects ? "👇 Projects 👇" : "👉 Projects 👈"}
+          {showProjects ? "ᐯ Projects ᐯ" : "ᐳ Projects ᐸ"}
         </button>
 
         {showProjects && (<div>
@@ -37,8 +37,8 @@ function App() {
         {
           content && (
             <div className='content-box'>
-              <h2 className='outlined-text'>{content.name}</h2>
-              <p className='outlined-text'>{content.information}</p>
+              <h2 className='outlined-title-text'>{content.name}</h2>
+              <p className='outlined-normal-text'>{content.information}</p>
               <img src={content.image} alt = {content.name} className='content-box-image' ></img>
               <button onClick={() => setContent(null)}>Fechar</button>
             </div>
